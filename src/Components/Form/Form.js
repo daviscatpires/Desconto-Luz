@@ -121,7 +121,7 @@ function Form() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="consumption">Preço da conta:</label> {/* Corrigido aqui */}
+          <label htmlFor="consumption">Arraste até o preço da conta:</label> {/* Corrigido aqui */}
           <Slider
             className="custom-slider" // Classe CSS personalizada para o controle deslizante
             styles={{
