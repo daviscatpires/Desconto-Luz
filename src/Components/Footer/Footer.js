@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
         <div className='contact-item'>
           <h3>Site Oficial:</h3>
-          <p></p>
+          <p>https://br5beneficios.com.br/</p>
         </div>
       </div>
       <div className='map-container'>
@@ -36,7 +36,7 @@ const Footer = () => {
           <FaWhatsapp className='whatsapp-icon' size={40} />
         </a>
       </div>
-      <p className='rights-reserved'>&copy; 2023 BR5TUBRO. Todos os direitos reservados.</p>
+      <p className='rights-reserved'>&copy; 2023 BR5 Benefícios. Todos os direitos reservados.</p>
     </footer>
   );
 }

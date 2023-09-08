@@ -1,0 +1,15 @@
+.video-section {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    color: black;
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 20px; /* Adiciona espaçamento ao redor do conteúdo */
+  }
+
+  .video-container {
+    display: inline-block; /* Permite centralizar o elemento com margens automáticas */
+    margin: 0 auto; /* Centraliza horizontalmente */
+  }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import Slider from 'react-input-slider'; // Importe o Slider
+import SuccessDialog from './SuccessDialog';
 import './Form.css';
-import VideoSection from './VideoSection';
 
 function Form() {
   const [name, setName] = useState('');
@@ -17,7 +17,13 @@ function Form() {
   const [consumption, setConsumption] = useState(0); // Estado para o preço da conta
   const [totalWithDiscount, setTotalWithDiscount] = useState(0);
 
+  const [selectedType, setSelectedType] = useState('');
+
   const [totalWithDiscount12, settotalWithDiscount12] = useState(0);
+
+  const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
+
+
 
   const validateName = () => {
     if (name.trim() === '') {
@@ -58,8 +64,9 @@ function Form() {
     const numericConsumo = parseFloat(value);
     const formattedTotalDesc = numericConsumo - numericConsumo * 0.11; // Cálculo de desconto
     const formattedTotalDesc12 = ((numericConsumo - formattedTotalDesc) * 12).toFixed(2);
+    const ecoMes = (numericConsumo - formattedTotalDesc).toFixed(2);
 
-    setTotalWithDiscount(formatNumber(formattedTotalDesc.toFixed(2)));
+    setTotalWithDiscount(formatNumber(ecoMes));
     settotalWithDiscount12(formatNumber(formattedTotalDesc12));
   };
 
@@ -95,43 +102,65 @@ function Form() {
         .catch((error) => {
           console.error('Error sending email:', error);
         });
+        // Após o envio bem-sucedido, exiba a mensagem de sucesso
+        setIsSuccessDialogOpen(true);
+
+      // Lembre-se de redefinir o estado após um tempo para ocultar a mensagem
+      setTimeout(() => {
+        setIsSuccessDialogOpen(false);
+      }, 5000);
     }
   };
 
   return (
     <section className="form-section">
-      <div>
-        <VideoSection /> {/* Renderize o componente VideoSection aqui */}
-      </div>
       <h2>
-        Garanta até <span className="discount">20%</span> de desconto na sua
+        Garanta até <span className="discount">30%</span> de desconto na sua
         conta de energia
       </h2>
       <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label>Tipo:</label>
+        <div className="type-buttons">
+          <button
+            className={`type-button ${selectedType === 'CPF' ? 'selected' : ''}`}
+            onClick={() => setSelectedType('CPF')}
+          >
+            CPF
+          </button>
+          <button
+            className={`type-button ${selectedType === 'CNPJ' ? 'selected' : ''}`}
+            onClick={() => setSelectedType('CNPJ')}
+          >
+            CNPJ
+          </button>
+        </div>
+      </div>
         <div className="form-group">
-          <label htmlFor="consumption">Preço da conta:</label>
+          <label htmlFor="consumption">Valor da conta:</label>
           <input
             type="text"
             id="consumption"
             placeholder="R$ 0,00"
             value={consumption}
             onChange={(e) => setConsumption(e.target.value)}
+            onBlur={() => calculateDiscount(consumption)}
             required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="consumption">Preço da conta:</label> {/* Corrigido aqui */}
+          <label htmlFor="consumption">Arraste até o valor da conta:</label> {/* Corrigido aqui */}
           <Slider
             className="custom-slider" // Classe CSS personalizada para o controle deslizante
             styles={{
               track: {
-                width: '325px',
+                width: '100%',
               },
               active: {
-                backgroundColor: '#d2b756', // Cor personalizada para o controle deslizante
+                backgroundColor: '#3390ba', // Cor personalizada para o controle deslizante
               },
               thumb: {
-                backgroundColor: '#d2b756', // Cor do botão do controle deslizante
+                backgroundColor: '#325faa', // Cor do botão do controle deslizante
               },
             }}
             axis="x"
@@ -146,20 +175,19 @@ function Form() {
         </div>
         <div className="form-group">
           <p className="total-price">
-            Você pagará com desconto: <br></br>
-            <span className="discount"> R$ {totalWithDiscount}</span>
-          </p>
-        </div>
-        <div className="form-group">
-          <p className="total-price">
-            Economize por ano até: <br></br>
+            Minha economia anual será no valor de: <br></br>
             <span className="discount"> R$ {totalWithDiscount12}</span>
           </p>
         </div>
         <div className="form-group">
           <p className="total-price">
-            Preencha o formulário para conseguir seu{' '}
-            <span className="discount">Desconto</span>
+            Em média <br></br>
+            <span className="discount"> R$ {totalWithDiscount}</span> por mes
+          </p>
+        </div>
+        <div className="form-group">
+          <p className="total-price">
+            Estamos quase lá!!!
           </p>
         </div>
         <div className="form-group">
@@ -199,7 +227,7 @@ function Form() {
           {phoneError && <span className="error-message">{phoneError}</span>}
         </div>
         <div className="form-group">
-          <button type="submit">Enviar</button>
+          <button type="submit" className="submit-button">QUERO ECONOMIZAR</button>
         </div>
         <div className="form-group">
           <p>
@@ -208,6 +236,7 @@ function Form() {
           </p>
         </div>
       </form>
+      <SuccessDialog isOpen={isSuccessDialogOpen} onClose={() => setIsSuccessDialogOpen(false)} />
     </section>
   );
 }

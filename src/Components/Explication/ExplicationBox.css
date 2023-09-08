@@ -3,7 +3,7 @@
     max-width: 400px;
     margin: 20px; /* Adiciona margem nas laterais */
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #3390ba;
     border: 2px solid #ddd;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -22,7 +22,8 @@
     max-width: 400px;
     margin: 20px; /* Adiciona margem nas laterais */
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #3390ba;
+    color: white;
     border: 2px solid #ddd;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -33,7 +34,7 @@
 
 
   .explication-box.expanded {
-    background-color: #fff;
+    background-color: #3390ba;
     border-color: #aaa;
     opacity: 1; /* Aumenta a opacidade quando expandido */
     transform: translateY(0); /* Volta à posição original quando expandido */
