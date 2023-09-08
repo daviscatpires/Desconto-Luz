@@ -1,0 +1,44 @@
+.explication-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px; /* Adiciona margem nas laterais */
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px; /* Adiciona um border-radius para cantos arredondados */
+    opacity: 0; /* Começa com opacidade 0 para a animação de fade-in */
+    transform: translateY(20px); /* Move ligeiramente para baixo para a animação */
+  }
+
+  .explication-box h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .explication-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px; /* Adiciona margem nas laterais */
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px; /* Adiciona um border-radius para cantos arredondados */
+    opacity: 1; /* Define opacidade inicial para 1 */
+    transform: translateY(0); /* Remove o movimento inicial */
+  }
+
+
+  .explication-box.expanded {
+    background-color: #fff;
+    border-color: #aaa;
+    opacity: 1; /* Aumenta a opacidade quando expandido */
+    transform: translateY(0); /* Volta à posição original quando expandido */
+  }
+
+  .explication-box.expanded p {
+    display: block;
+  }

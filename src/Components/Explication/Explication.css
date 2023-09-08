@@ -1,0 +1,18 @@
+.explication-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px;
+    background-color: #222; /* Fundo mais escuro que a página */
+
+  }
+
+  .explication-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Estilos para os ExplicationBox são definidos no ExplicationBox.css */

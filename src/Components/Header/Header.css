@@ -1,0 +1,16 @@
+.header {
+    background-color: #222; /* Fundo mais escuro que a página */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Espaçamento interno */
+  }
+
+  .logo {
+    margin: 0 auto; /* Centralizar a logo */
+    max-width: 50%; /* Definir uma largura máxima para a logo */
+  }
+
+  .logo img {
+    width: 70%; /* Ajustar a largura da imagem dentro do contêiner */
+    height: auto; /* Manter a proporção da imagem */
+  }

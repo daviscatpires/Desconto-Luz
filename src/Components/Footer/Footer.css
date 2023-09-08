@@ -1,0 +1,42 @@
+.footer {
+    background-color: #333; /* Altere a cor de fundo como necessário */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    gap: 10px; /* Espaçamento entre os itens */
+  }
+
+  .contact-item {
+    margin-bottom: 10px; /* Espaçamento entre os itens de contato */
+  }
+
+  .map-container {
+    margin-top: 20px; /* Espaçamento entre os itens de contato e o mapa */
+  }
+
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999; /* Garante que o botão fique acima de todos os elementos */
+  }
+
+  .whatsapp-icon {
+    color: #fff; /* Define a cor branca para o ícone */
+    background-color: #25d366; /* Define a cor de fundo verde */
+    padding: 10px;
+    border-radius: 50%; /* Define o formato circular do botão */
+    border: 2px solid #fff; /* Define a borda branca */
+  }
+
+  .whatsapp-button img {
+    width: 50px; /* Ajusta o tamanho do ícone do WhatsApp */
+    height: auto;
+    cursor: pointer;
+  }
