@@ -116,6 +116,7 @@ function Form() {
             placeholder="R$ 0,00"
             value={consumption}
             onChange={(e) => setConsumption(e.target.value)}
+            onBlur={() => calculateDiscount(consumption)}
             required
           />
         </div>
