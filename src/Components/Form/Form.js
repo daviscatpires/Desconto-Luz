@@ -170,7 +170,7 @@ function Form() {
               calculateDiscount(x); // Calcule o desconto com base no novo valor
             }}
             xmin={0}
-            xmax={2000} // Defina o valor máximo que deseja permitir no controle deslizante
+            xmax={10000} // Defina o valor máximo que deseja permitir no controle deslizante
           />
         </div>
         <div className="form-group">
