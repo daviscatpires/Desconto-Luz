@@ -62,7 +62,7 @@ function Form() {
   // Função para calcular o desconto com base no novo valor do controle deslizante
   const calculateDiscount = (value) => {
     const numericConsumo = parseFloat(value);
-    const formattedTotalDesc = numericConsumo - numericConsumo * 0.11; // Cálculo de desconto
+    const formattedTotalDesc = numericConsumo - numericConsumo * 0.3; // Cálculo de desconto
     const formattedTotalDesc12 = ((numericConsumo - formattedTotalDesc) * 12).toFixed(2);
     const ecoMes = (numericConsumo - formattedTotalDesc).toFixed(2);
 
@@ -80,7 +80,7 @@ function Form() {
     if (isNameValid && isEmailValid && isPhoneValid) {
       const numericConsumo = parseFloat(consumption);
 
-      const formattedTotalDesc = numericConsumo - (numericConsumo * 11 / 100);
+      const formattedTotalDesc = numericConsumo - (numericConsumo * 30 / 100);
 
       const templateParams = {
         name,
@@ -169,7 +169,7 @@ function Form() {
               setConsumption(x); // Atualize o preço da conta com o valor do controle deslizante
               calculateDiscount(x); // Calcule o desconto com base no novo valor
             }}
-            xmin={0}
+            xmin={500}
             xmax={10000} // Defina o valor máximo que deseja permitir no controle deslizante
           />
         </div>
