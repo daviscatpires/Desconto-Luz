@@ -8,11 +8,11 @@ const Footer = () => {
       <div className='contact-info'>
         <div className='contact-item'>
           <h3>WhatsApp:</h3>
-          <p>(65) 99642-8611</p>
+          <p>+55 (65) 9 9639-7994</p>
         </div>
         <div className='contact-item'>
           <h3>Email:</h3>
-          <p>daypirespinho@gmail.com</p>
+          <p>gerente.comercial@br5beneficios.com.br</p>
         </div>
         <div className='contact-item'>
           <h3>Site Oficial:</h3>
